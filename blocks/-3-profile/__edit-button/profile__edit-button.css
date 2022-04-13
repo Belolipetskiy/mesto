@@ -5,7 +5,6 @@
     padding: 0;
     border: 1px solid #fff;
     box-sizing: border-box;
-    background-size: 10px;
     background: no-repeat center url(../../../images/-2-profile/edit.svg);
     cursor: pointer;
     transition: opacity .5s linear;
