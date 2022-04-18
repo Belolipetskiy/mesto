@@ -11,8 +11,8 @@ let profileAbout = document.querySelector('.profile__info-subtitle');
 function openModalWindow() {
     modalWindow.classList.add('popup_opened'); {
 
-        nameInput.value = `${profileName.textContent}`;
-        aboutInput.value = `${profileAbout.textContent}`;
+        nameInput.value = profileName.textContent;
+        aboutInput.value = profileAbout.textContent;
     }
 }
 
