@@ -1,0 +1,16 @@
+.photo-grid__button {
+    height: 19px;
+    width: 22px;
+    margin: 0 20px;
+    padding: 0;
+    background: no-repeat center url(../../../images/-3-photos/heart.svg);
+    background-size: 100%;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: opacity .5s linear;
+}
+
+.photo-grid__button:hover {
+  opacity: .5;
+}
