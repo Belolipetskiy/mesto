@@ -1,4 +1,4 @@
-# Проект 4: Mesto
+# Проект 4, 5: Mesto
 
 ## Описание:
 
@@ -15,6 +15,6 @@
 * Flexbox-вёрстка
 * Grid Layout
 * Медиазапросы
-* JavaScript (DOM) 
+* JavaScript (DOM, интерфейсы веб API, стандартные встроенные объекты) 
 
 # [Ссылка на сайт](https://belolipetskiy.github.io/mesto/)
