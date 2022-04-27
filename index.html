@@ -6,88 +6,84 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./pages/index.css">
-    <title>Mesto</title>
+    <title>mesto</title>
 </head>
 
-<body>
-    <div class="page">
-        <header class="header">
-            <img class="header__logo" src="./images/-1-header/Vector_logo.svg" alt="Логотип">
-        </header>
-        <main>
-            <section class="profile">
-                <img src="./images/-2-profile/kusto.jpg" alt="фотография Жак-Ив Кусто" class="profile__avatar">
-                <div class="profile__info">
-                    <h1 class="profile__info-title">Жак-Ив Кусто</h1>
-                    <button type="button" aria-label="Редактировать профиль" class="profile__edit-button"></button>
-                    <p class="profile__info-subtitle">Исследователь океана</p>
-                </div>
-                <button type="button" aria-label="Добавить элемент" class="profile__add-button"></button>
-            </section>
-            <section class="photos">
-                <ul class="photo-grid">
-                    <li class="photo-grid__card">
-                        <img src="./images/-3-photos/karachaevsk.jpg" alt="Сентинский храм" class="photo-grid__image">
-                        <div class="photo-grid__description">
-                            <h2 class="photo-grid__title">Карачаевск</h2>
-                            <button type="button" aria-label="Лайк" class="photo-grid__button"></button>
-                        </div>
-                    </li>
-                    <li class="photo-grid__card">
-                        <img src="./images/-3-photos/kirill-pershin-elbrus.jpg" alt="Гора Эльбрус" class="photo-grid__image">
-                        <div class="photo-grid__description">
-                            <h2 class="photo-grid__title">Гора Эльбрус</h2>
-                            <button type="button" aria-label="Лайк" class="photo-grid__button"></button>
-                        </div>
-                    </li>
-                    <li class="photo-grid__card">
-                        <img src="./images/-3-photos/Dombay.jpg" alt="Домбай" class="photo-grid__image">
-                        <div class="photo-grid__description">
-                            <h2 class="photo-grid__title">Домбай</h2>
-                            <button type="button" aria-label="Лайк" class="photo-grid__button"></button>
-                        </div>
-                    </li>
-                    <li class="photo-grid__card">
-                        <img src="./images/-3-photos/kirill-pershin-elbrus.jpg" alt="Гора Эльбрус" class="photo-grid__image">
-                        <div class="photo-grid__description">
-                            <h2 class="photo-grid__title">Гора Эльбрус</h2>
-                            <button type="button" aria-label="Лайк" class="photo-grid__button"></button>
-                        </div>
-                    </li>
-                    <li class="photo-grid__card">
-                        <img src="./images/-3-photos/Dombay.jpg" alt="Домбай" class="photo-grid__image">
-                        <div class="photo-grid__description">
-                            <h2 class="photo-grid__title">Домбай</h2>
-                            <button type="button" aria-label="Лайк" class="photo-grid__button"></button>
-                        </div>
-                    </li>
-                    <li class="photo-grid__card">
-                        <img src="./images/-3-photos/karachaevsk.jpg" alt="Сентинский храм" class="photo-grid__image">
-                        <div class="photo-grid__description">
-                            <h2 class="photo-grid__title">Карачаево-Ч...</h2>
-                            <button type="button" aria-label="Лайк" class="photo-grid__button"></button>
-                        </div>
-                    </li>
+<body class="page">
 
-                </ul>
-            </section>
-        </main>
-        <footer class="footer">
-            <p class="footer__author">&copy; 2020 Mesto Russia</p>
-        </footer>
-        <div class="popup">
-            <div class="popup__container">
-                <button type="button" aria-label="Закрыть форму" class="popup__close"></button>
-                <form name="edit" class="popup__form">
-                    <h2 class="popup__title">Редактировать профиль</h2>
-                    <input type="text" name="name" class="popup__input popup__input_text_name">
-                    <input type="text" name="about" class="popup__input popup__input_text_about">
-                    <button type="submit" aria-label="Сохранить" class="popup__save-button">Сохранить</button>
-                </form>
+    <header class="header">
+        <img src="./images/logo-mesto.svg" alt="Лого Место Россия" class="header__logo">
+    </header>
+
+    <main>
+        <section class="profile">
+            <img src="./images/jacques-yves-cousteau.jpg" alt="Аватар" class="profile__avatar">
+            <div class="profile__info">
+                <h1 class="profile__info-title">Жак-Ив Кусто</h1>
+                <button type="button" aria-label="Редактировать профиль" class="profile__edit-button"></button>
+                <p class="profile__info-subtitle">Исследователь океана</p>
             </div>
+            <button type="button" aria-label="Добавить фото" class="profile__add-card"></button>
+        </section>
+
+        <section class="elements">
+            <ul class="element-grid">
+
+            </ul>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p class="footer__title">&copy; 2020 Mesto Russia</p>
+    </footer>
+
+    <template class="card-template">
+        <li class="card">
+            <img src="#" alt="#" class="card__img">
+            <button type="button" aria-label="Удалить фото" class="card__bin"></button>
+            <div class="card__description">
+                <h2 class="card__title"></h2>
+                <button type="button" aria-label="Лайк" class="card__like"></button>
+            </div>
+        </li>
+    </template>
+
+    <div class="popup popup_profile">
+        <div class="popup__container">
+            <button type="button" aria-label="Закрыть форму" class="popup__close"></button>
+            <form name="edit-form" class="popup__form-profile">
+                <h2 class="popup__title">Редактировать профиль</h2>
+                <input type="text" name="profile-name" class="popup__input popup__input_profile_name">
+                <input type="text" name="profile-about" class="popup__input popup__input_profile_about">
+                <button type="submit" aria-label="Сохранить" class="popup__save-button">Сохранить</button>
+            </form>
         </div>
     </div>
+
+    <div class="popup popup_add-card">
+        <div class="popup__container">
+            <button type="button" aria-label="Закрыть форму" class="popup__close"></button>
+            <form name="add-card" class="popup__form-card">
+                <p class="popup__title">Новое место</p>
+                <input type="text" name="card-name" placeholder="Название" class="popup__input popup__input_card_name">
+                <input type="text" name="card-link" placeholder="Ссылка на фото" class="popup__input popup__input_card_link">
+                <button type="submit" aria-label="Сохранить" class="popup__save-button">Создать</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="popup popup_open-card">
+        <div class="popup__container popup__container_open_img">
+            <button type="button" aria-label="Закрыть форму" class="popup__close"></button>
+            <figure class="popup__big-img">
+                <img src="#" alt="#" class="popup__image">
+                <figcaption class="popup__image-title"></figcaption>
+            </figure>
+        </div>
+    </div>
+
     <script src="./scripts/index.js"></script>
+
 </body>
 
 </html>
