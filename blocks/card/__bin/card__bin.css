@@ -1,0 +1,17 @@
+.card__bin {
+    position: absolute;
+    width: 18px;
+    height: 19px;
+    margin: 0;
+    padding: 0;
+    top: 20px;
+    right: 20px;
+    background: no-repeat url(../../../images/del.svg);
+    border: none;
+    cursor: pointer;
+    transition: opacity .5s linear;
+}
+
+.card__bin:hover {
+    opacity: .5;
+}
