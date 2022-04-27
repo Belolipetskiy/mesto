@@ -1,7 +1,7 @@
 const popupProfile = document.querySelector('.popup_profile');
 const editProfileBtn = document.querySelector('.profile__edit-button');
 const editNameInfo = popupProfile.querySelector('.popup__form-profile');
-const closePopupProfile = popupProfile.querySelector('.popup__close');
+const buttonClosePopupProfile = popupProfile.querySelector('.popup__close');
 const nameInputProfile = popupProfile.querySelector('.popup__input_profile_name');
 const aboutInputProfile = popupProfile.querySelector('.popup__input_profile_about');
 const profileName = document.querySelector('.profile__info-title');
@@ -10,50 +10,32 @@ const profileAbout = document.querySelector('.profile__info-subtitle');
 const popupAddCard = document.querySelector('.popup_add-card');
 const addCardBtn = document.querySelector('.profile__add-card');
 const editNameCard = popupAddCard.querySelector('.popup__form-card');
-const closePopupCard = popupAddCard.querySelector('.popup__close');
+const buttonClosePopupCard = popupAddCard.querySelector('.popup__close');
 const listContainer = document.querySelector('.element-grid');
 const cardTemplate = document.querySelector('.card-template');
 const nameInputCard = document.querySelector('.popup__input_card_name');
 const linkInputCard = document.querySelector('.popup__input_card_link');
 
-const popupOpenCard = document.querySelector('.popup_open-card'); 
-const bigCard = popupOpenCard.querySelector('.popup__image'); 
-const bigCardTitle = popupOpenCard.querySelector('.popup__image-title'); 
-const closePopupBigCard = popupOpenCard.querySelector('.popup__close');
-
-const initialCards = [
-    {
-        name: 'Архыз',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-    {
-        name: 'Челябинская область',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-    {
-        name: 'Иваново',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-    {
-        name: 'Камчатка',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-    {
-        name: 'Холмогорский район',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-    {
-        name: 'Байкал',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-];
+const popupOpenCard = document.querySelector('.popup_open-card'); //
+const bigCard = popupOpenCard.querySelector('.popup__image'); //
+const bigCardTitle = popupOpenCard.querySelector('.popup__image-title'); //
+const buttonClosePopupBigCard = popupOpenCard.querySelector('.popup__close');
 
 function openModalWindow(popup) {
-    popup.classList.add('popup_opened'); {}
+    popup.classList.add('popup_opened');
 }
 
 function closeModalWindow(popup) {
-    popup.classList.remove('popup_opened'); {}
+    popup.classList.remove('popup_opened');
+}
+
+addCardBtn.addEventListener('click', () => {
+    openModalWindow(popupAddCard);
+});
+
+function render() {
+    const drawingElements = initialCards.map(getElement);
+    listContainer.append(...drawingElements);
 }
 
 addCardBtn.addEventListener('click', () => {
@@ -94,7 +76,6 @@ function getElement(item) {
     return getElemenTemplate;
 }
 
-
 function addCard(evt) {
 
     const cardElement = getElement({
@@ -116,7 +97,7 @@ editNameCard.addEventListener('submit', evt => {
     addCard();
 });
 
-closePopupCard.addEventListener('click', () => {
+buttonClosePopupCard.addEventListener('click', () => {
     closeModalWindow(popupAddCard);
 });
 
@@ -132,7 +113,7 @@ editProfileBtn.addEventListener('click', () => {
     openModalWindow(popupProfile);
 });
 
-closePopupProfile.addEventListener('click', () => {
+buttonClosePopupProfile.addEventListener('click', () => {
     closeModalWindow(popupProfile);
 });
 
@@ -145,7 +126,7 @@ editNameInfo.addEventListener('submit', evt => {
     closeModalWindow(popupProfile);
 });
 
-closePopupBigCard.addEventListener('click', () => {
+buttonClosePopupBigCard.addEventListener('click', () => {
     closeModalWindow(popupOpenCard);
 });
 
