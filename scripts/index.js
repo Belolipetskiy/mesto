@@ -24,31 +24,38 @@ function openModalWindow(popup) {
     popup.addEventListener('mousedown', closeByOverlay);
     document.addEventListener('keydown', closeByEsc);
 }
+
 function closeModalWindow(popup) {
     popup.classList.remove('popup_opened');
     popup.removeEventListener('mousedown', closeByOverlay);
     document.removeEventListener('keydown', closeByEsc);
 }
+
 function closeByEsc(evt) {
     if (evt.key === 'Escape') {
         const popupOpened = document.querySelector('.popup_opened');
         closeModalWindow(popupOpened);
     }
 }
+
 function closeByOverlay(evt) {
-    if (evt.target) {
-        const popupOpened = document.querySelector('.popup_opened');
-        closeModalWindow(evt.target);
+    if (evt.target.classList.contains('popup') || evt.target.classList.contains('popup__close')) {
+        closeModalWindow(evt.currentTarget)
     }
 }
+
 btnAddCard.addEventListener('click', () => {
+    const submitBtn = popupAddCard.querySelector('.popup__save-button');
+    disableSubmitButton(submitBtn, config.inactiveButtonClass);
     clearError(popupAddCard, config, disableSubmitButton);
     openModalWindow(popupAddCard);
 });
+
 function render() {
     const drawingElements = initialCards.map(getElement);
     listContainer.append(...drawingElements);
 }
+
 function getElement(item) {
     const elementTemplate = cardTemplate.content.cloneNode(true);
     const link = elementTemplate.querySelector('.card__img');
@@ -70,6 +77,7 @@ function getElement(item) {
     });
     return elementTemplate;
 }
+
 function addCard(evt) {
     const cardElement = getElement({
         name: nameInputCard.value,
@@ -78,24 +86,29 @@ function addCard(evt) {
     listContainer.prepend(cardElement);
     formEditCard.reset();
 }
+
 formEditCard.addEventListener('submit', evt => {
     evt.preventDefault();
     closeModalWindow(popupAddCard);
     addCard();
 });
+
 buttonClosePopupCard.addEventListener('click', () => {
     closeModalWindow(popupAddCard);
 });
+
 function removeCard(evt) {
     const cardElement = evt.target.closest('.card');
     cardElement.remove();
 }
+
 btnEditProfile.addEventListener('click', () => {
     inputNameProfile.value = `${profileName.textContent}`;
     inputAboutProfile.value = `${profileAbout.textContent}`;
     clearError(popupProfile, config, disableSubmitButton);
     openModalWindow(popupProfile);
 });
+
 buttonClosePopupProfile.addEventListener('click', () => {
     closeModalWindow(popupProfile);
 });
@@ -106,6 +119,7 @@ formEditProfile.addEventListener('submit', evt => {
     profileAbout.textContent = inputAboutProfile.value;
     closeModalWindow(popupProfile);
 });
+
 buttonClosePopupBigCard.addEventListener('click', () => {
     closeModalWindow(popupOpenCard);
 });
