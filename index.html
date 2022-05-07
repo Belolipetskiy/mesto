@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./pages/index.css">
-    <title>mesto</title>
+    <title>Место Россия</title>
 </head>
 
 <body class="page">
@@ -34,16 +34,16 @@
     </main>
 
     <footer class="footer">
-        <p class="footer__title">&copy; 2020 Mesto Russia</p>
+        <p class="footer__title">&#169; 2020 Mesto Russia</p>
     </footer>
 
     <template class="card-template">
         <li class="card">
             <img src="#" alt="#" class="card__img">
-            <button type="button" aria-label="Удалить фото" class="card__bin"></button>
+            <button type="button" aria-label="Удалить карточку" class="card__bin"></button>
             <div class="card__description">
                 <h2 class="card__title"></h2>
-                <button type="button" aria-label="Лайк" class="card__like"></button>
+                <button type="button" aria-label="Лайкнуть сердечко" class="card__like"></button>
             </div>
         </li>
     </template>
@@ -52,10 +52,10 @@
         <div class="popup__container">
             <button type="button" aria-label="Закрыть форму" class="popup__close"></button>
             <form novalidate name="edit-form" class="popup__form">
-                <h2 class="popup__title">Редактировать профиль</h2>
-                <input type="text" placeholder="Имя" name="profile-name" id="input-name" minlength="2" maxlength="40" class="popup__input popup__input_profile_name" required>
+                <p class="popup__title">Редактировать профиль</p>
+                <input name="profile-name" id="input-name" type="text" placeholder="Имя" required minlength="2" maxlength="40" class="popup__input popup__input_profile_name">
                 <span id="input-name-error" class="popup__error"></span>
-                <input type="text" placeholder="Подпись" name="profile-about" class="popup__input popup__input_profile_about" id="input-about" minlength="2" maxlength="200" required>
+                <input name="profile-about" id="input-about" type="text" placeholder="О себе" required minlength="2" maxlength="200" class="popup__input popup__input_profile_about">
                 <span id="input-about-error" class="popup__error"></span>
                 <button type="submit" aria-label="Сохранить" class="popup__save-button">Сохранить</button>
             </form>
@@ -67,9 +67,9 @@
             <button type="button" aria-label="Закрыть форму" class="popup__close"></button>
             <form name="add-card" class="popup__form">
                 <p class="popup__title">Новое место</p>
-                <input type="text" name="item-name" placeholder="Название" class="popup__input popup__input_card_name" id="card-name" minlength="2" maxlength="30" required>
+                <input name="item-name" id="card-name" type="text" placeholder="Название" required minlength="2" maxlength="30" class="popup__input popup__input_card_name">
                 <span id="card-name-error" class="popup__error"></span>
-                <input type="url" name="item-link" placeholder="Ссылка на фото" class="popup__input popup__input_card_link" id="card-link" required>
+                <input name="item-link" id="card-link" type="url" placeholder="Ссылка на картинку" required class="popup__input popup__input_card_link">
                 <span id="card-link-error" class="popup__error"></span>
                 <button type="submit" aria-label="Сохранить" class="popup__save-button">Создать</button>
             </form>
@@ -86,8 +86,8 @@
         </div>
     </div>
     <script src="./scripts/cards.js"></script>
-    <script src="scripts/index.js"></script>
-    <script src="scripts/validate.js"></script>
+    <script src="./scripts/validate.js"></script>
+    <script src="./scripts/index.js"></script>
 
 </body>
 
