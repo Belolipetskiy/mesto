@@ -8,7 +8,6 @@ import {
 const popupProfile = document.querySelector('.popup_profile');
 const btnEditProfile = document.querySelector('.profile__edit-button');
 const formEditProfile = popupProfile.querySelector('.popup__form');
-const buttonClosedPopupProfile = popupProfile.querySelector('.popup__close');
 const inputNameProfile = popupProfile.querySelector('.popup__input_profile_name');
 const inputAboutProfile = popupProfile.querySelector('.popup__input_profile_about');
 const profileName = document.querySelector('.profile__info-title');
@@ -104,9 +103,6 @@ btnEditProfile.addEventListener('click', () => {
     openModalWindow(popupProfile);
 });
 
-closingPopupProfile.addEventListener('click', () => {
-    closeModalWindow(popupProfile);
-});
 
 formEditProfile.addEventListener('submit', evt => {
     evt.preventDefault();
